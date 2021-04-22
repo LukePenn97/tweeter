@@ -1,0 +1,14 @@
+header.top-header {
+  display: flex;
+  background-image: url("../images/foggy-birds.png");
+  background-color: #eab34e;
+  height: 400px;
+  width: 100%;
+  flex-flow: column wrap;
+  align-content: center;
+  text-align: center;
+}
+
+header.top-header div img {
+  margin-top: 1em;
+}
