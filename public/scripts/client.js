@@ -6,6 +6,7 @@
 
 jQuery(document).ready(function() {
 
+  // render all tweets stored in server
   const renderTweets = function(tweets) {
     $("#tweets").empty();
     $.each(tweets, function(index){
@@ -13,12 +14,14 @@ jQuery(document).ready(function() {
     });
   }
 
+  // avoid user code inputs with escape
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // layout html structure for tweet and put data in
   const createTweetElement = function(tweetObj) {
     let $tweet = $(
       `<article class='tweet'>
@@ -47,6 +50,7 @@ jQuery(document).ready(function() {
     return $tweet;
   }
 
+  // get tweets from server and pass to renderTweets()
   const loadTweets = function() {
     $.ajax("/tweets", { type: "GET", success: function(tweetArray) {
       // let tweets = JSON.parse(tweetArray);
@@ -57,10 +61,12 @@ jQuery(document).ready(function() {
 
   }
   
+  // initial call to load tweets, hide error msg, and focus textarea
   loadTweets();
   $("#error-msg").hide();
   $("#tweet-text").focus();
 
+  // new tweet form
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
     const textData = $( this ).serialize();
@@ -86,13 +92,33 @@ jQuery(document).ready(function() {
         $("#tweet-counter").val(140);
       })
   })
+
+  // toggle new tweet form
   $("#doubledown").on("click", function(event) {
     $(".new-tweet").slideToggle("fast");
     $("#tweet-text").focus();
   });
 
-  $("#doubleup").on("scroll", function(event) {
-    $(".new-tweet").slideToggle("fast");
+  // if scrolled down far enough, show (back to top) button
+  const slideOnScroll = function () {
+    console.log(window.scrollY);
+    if (window.scrollY > 1000) {
+      $("#doubleup").slideDown("fast");
+    } else {
+      $("#doubleup").slideUp("fast");
+    }
+  }
+
+
+  let $window = $(window);
+
+  // function for scroll check
+  $window.on('scroll resize', slideOnScroll);
+  $window.trigger('scroll');
+
+  // back to top button
+  $("#doubleup").on("click", function(event) {
+    window.scroll(0, 0);
   });
 
 });

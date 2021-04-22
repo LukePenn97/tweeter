@@ -54,3 +54,7 @@ main {
   background-color: red;
   z-index: 1;
 }
+
+#doubleup:hover {
+  color: pink;
+}
