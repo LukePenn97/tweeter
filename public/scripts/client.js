@@ -53,8 +53,6 @@ jQuery(document).ready(function() {
   // get tweets from server and pass to renderTweets()
   const loadTweets = function() {
     $.ajax("/tweets", { type: "GET", success: function(tweetArray) {
-      // let tweets = JSON.parse(tweetArray);
-      console.log(tweetArray);
       renderTweets(tweetArray);
       timeago.render(document.querySelectorAll('.timeago'));
     }})
@@ -71,7 +69,6 @@ jQuery(document).ready(function() {
     event.preventDefault();
     const textData = $( this ).serialize();
     let rawText = textData.slice(5);
-    console.log(rawText);
     if (rawText === "") {
       $("#error-msg").html("Error: Not enough message");
       $("#error-msg").slideDown("fast");
@@ -101,7 +98,6 @@ jQuery(document).ready(function() {
 
   // if scrolled down far enough, show (back to top) button
   const slideOnScroll = function () {
-    console.log(window.scrollY);
     if (window.scrollY > 1000) {
       $("#doubleup").slideDown("fast");
     } else {
