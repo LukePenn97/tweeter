@@ -16,7 +16,7 @@ html {
  */
 body {
   color: #545149;
-  background-color: #eab34e;
+  background-color: #ff99cc;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -61,19 +61,24 @@ main {
   body {
     display: flex;
     flex-direction: column;
+    background-image: url("../images/foggy-birds.png"), linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    background-repeat: no-repeat;
+    background-size: auto;
   }
 
   body header.top-header {
     display: block;
     width: 30%;
     margin: 3em;
+    background-image: none;
   }
 
   .container {
+    
     display: inline-block;
     width: 50%;
     position: absolute;
     right: 10px;
-    top: 150px;
+    top: 170px;
   }
 }

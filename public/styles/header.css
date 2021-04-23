@@ -1,7 +1,6 @@
 header.top-header {
   display: flex;
-  background-image: url("../images/foggy-birds.png");
-  background-color: #eab34e;
+  background-image: url("../images/foggy-birds.png"), linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
   height: 400px;
   width: 100%;
   flex-flow: column wrap;
