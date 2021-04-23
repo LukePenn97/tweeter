@@ -1,4 +1,4 @@
-nav {
+ nav {
   display: flex;
   width: 100vw;
   height: 120px;
@@ -7,42 +7,44 @@ nav {
   justify-content: space-between;
   position: sticky;
   top: 0;
-}
-
-nav span {
+  
+ }
+ nav span {
   font-size: 35px;
   display: flex;
   justify-content: right;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   padding-top: 1.5em;
   margin: 0em 1.5em 0em 1.5em;
   padding-right: 1.5em;
-}
+ }
 
-nav span.write {
+ nav span.write {
   font-size: 20px;
-}
+ }
 
-#write {
-  margin: 1em 0em;
-}
+ #write {
+    margin: 1em 0em;
+ }
 
-#new-tweet {
-  font-family: "Source Sans Pro", sans-serif;
-  margin: 1em 0.5em;
-}
+ #new-tweet {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 1em .5em;
+ }
 
-#doubledown {
+ #doubledown {
   align-self: flex-end;
   right: 5em;
   bottom: 1em;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  padding: 1em;
-  margin: -1em;
-}
+
+  display: inline-block;     
+  position: relative;    
+  z-index: 1;     
+  padding: 1em;     
+  margin: -1em; 
+
+ }
 
 #doubledown:hover {
-  color: red;
+   color: red;
 }

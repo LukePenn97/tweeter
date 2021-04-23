@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,16 +13,18 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #eab34e;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
 main {
   margin: 1em 5%;
   padding: 1em;
@@ -32,13 +33,14 @@ main {
   align-content: center;
   justify-content: center;
   background-color: white;
+  
 }
 
 #error-msg {
   background-color: pink;
   justify-content: center;
   border-radius: 5px;
-  padding: 0.5em;
+  padding: .5em;
 }
 
 #doubleup {
@@ -62,13 +64,11 @@ main {
     display: flex;
     flex-direction: column;
   }
-
   body header.top-header {
     display: block;
     width: 30%;
     margin: 3em;
   }
-
   .container {
     display: inline-block;
     width: 50%;
